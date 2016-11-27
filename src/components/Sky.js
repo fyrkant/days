@@ -6,7 +6,7 @@ export default class Sky extends Component {
   render () {
     const {innerWidth, innerHeight} = this.props.windowSize && this.props.windowSize
     const createStar = (star, key) =>
-      <Star key={key} x={Math.round((star.x * innerWidth) / 100)} y={Math.round((star.y * innerHeight) / 100)} />
+      <Star key={key} isYours={this.props.currentUser === star.uid} x={Math.round((star.x * innerWidth) / 100)} y={Math.round((star.y * innerHeight) / 100)} />
     return (
       <span>
         {map(this.props.stars, createStar)}
