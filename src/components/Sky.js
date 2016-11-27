@@ -1,17 +1,15 @@
 import React, {Component} from 'react'
 import Star from './Star'
+import map from 'lodash/map'
 
 export default class Sky extends Component {
   render () {
     const {innerWidth, innerHeight} = this.props.windowSize && this.props.windowSize
+    const createStar = (star, key) =>
+      <Star key={key} x={Math.round((star.x * innerWidth) / 100)} y={Math.round((star.y * innerHeight) / 100)} />
     return (
       <span>
-        {this.props.stars.map(s => {
-          const realX = Math.round((s.x * innerWidth) / 100)
-          const realY = Math.round((s.y * innerHeight) / 100)
-
-          return <Star key={s.key} x={realX} y={realY} />
-        })}
+        {map(this.props.stars, createStar)}
       </span>
     )
   }
