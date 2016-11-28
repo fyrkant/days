@@ -66,7 +66,7 @@ export default class App extends React.Component {
         this.filterStars(stars)
       })
 
-  firebase.auth().onAuthStateChanged(user =>
+    firebase.auth().onAuthStateChanged(user =>
       user ? this.setState({currentUser: user.uid}) : firebase.auth().signInAnonymously()
     )
 
@@ -77,7 +77,7 @@ export default class App extends React.Component {
     return (
       <article className='baskerville' onClick={e => this.addStar(e)}>
         <div className='vh-100 dt w-100 tc bg-black white cover' >
-          <Sky stars={this.state.stars} windowSize={this.state.windowSize} currentUser={this.state.currentUser}/>
+          <Sky stars={this.state.stars} windowSize={this.state.windowSize} currentUser={this.state.currentUser} />
           <div className='dtc v-mid'>
             <h1 className='f1 f-headline-l tracked-tight fw1 white-60'>It's been {moment().diff('20140712', 'days')} days</h1>
             <blockquote className='ph0 mh0 measure f2 center'>

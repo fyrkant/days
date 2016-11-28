@@ -1,6 +1,5 @@
 module.exports = {
-    "extends": ["standard", "standard-react"],
-    "installedESLint": true,
+    "extends": ["react-app", "standard", "standard-react"],
     "plugins": [
         "standard",
         "promise"
