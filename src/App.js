@@ -75,7 +75,7 @@ export default class App extends React.Component {
   }
   render () {
     return (
-      <article className='baskerville' onTouchStart={e => this.addStar(e.changedTouches[0])} onClick={e => this.addStar(e)}>
+      <article className='baskerville' onClick={e => this.addStar(e)}>
         <div className='vh-100 dt w-100 tc bg-black white cover' >
           <Sky stars={this.state.stars} windowSize={this.state.windowSize} currentUser={this.state.currentUser}/>
           <div className='dtc v-mid'>

@@ -4,3 +4,21 @@ body {
   font-family: sans-serif;
   overflow: hidden;
 }
+
+.star-enter {
+  opacity: 0.01;
+}
+
+.star-enter.star-enter-active {
+  opacity: 1;
+  transition: opacity 3s ease-in;
+}
+
+.star-leave {
+  opacity: 1;
+}
+
+.star-leave.star-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
